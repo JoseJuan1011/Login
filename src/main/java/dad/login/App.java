@@ -25,7 +25,6 @@ public class App extends Application {
 	@Override
 	public void stop() throws Exception {
 		super.stop();
-		System.out.println("Aplicación Cerrandose");
 	}
 
 }

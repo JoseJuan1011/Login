@@ -30,7 +30,10 @@ public class View extends VBox {
 	
 	public View() {
 		usuarioTextField = new TextField();
+		usuarioTextField.setPromptText("Nombre de Usuario");
+		
 		contraseñaPasswordField = new PasswordField();
+		contraseñaPasswordField.setPromptText("Contraseña de usuario");
 		
 		dataPane = new GridPane();
 		dataPane.setHgap(5);
@@ -59,7 +62,8 @@ public class View extends VBox {
 		cols[0].setHalignment(HPos.LEFT);
 		cols[0].setMinWidth(10);
 		
-		cols[1].setMaxWidth(75);
+		cols[1].setMaxWidth(175);
+		cols[1].setFillWidth(true);
 		
 		useLdapCheckBox = new CheckBox("Usar Ldap");
 		
