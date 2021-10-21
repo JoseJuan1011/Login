@@ -1,6 +1,8 @@
 package dad.login;
 
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Model {
@@ -10,6 +12,14 @@ public class Model {
 	private StringProperty contraseña;
 
 	private BooleanProperty usarLdap;
+	
+	public Model() {
+		usuario = new SimpleStringProperty();
+		
+		contraseña = new SimpleStringProperty();
+		
+		usarLdap = new SimpleBooleanProperty();
+	}
 	
 	public final StringProperty usuarioProperty() {
 		return this.usuario;

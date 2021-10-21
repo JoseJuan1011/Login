@@ -1,13 +1,21 @@
 package dad.login;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
+	private Controller controller = new Controller();
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
+		
+		Scene scene = new Scene(controller.getView(), 420, 300);
+		
+		primaryStage.setTitle("Iniciar Sesión");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 
 	public static void main(String[] args) {

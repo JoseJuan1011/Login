@@ -1,6 +1,8 @@
 package dad.login;
 
 import javafx.geometry.HPos;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -33,13 +35,19 @@ public class View extends VBox {
 		dataPane = new GridPane();
 		dataPane.setHgap(5);
 		dataPane.setVgap(5);
+		dataPane.setAlignment(Pos.CENTER);
 		dataPane.addRow(0, new Label("Usuario: "), usuarioTextField);
-		dataPane.addRow(1, new Label("Contraseña: ", contraseñaPasswordField));
+		dataPane.addRow(1, new Label("Contraseña: "), contraseñaPasswordField);
 		
 		RowConstraints[] rows = {
 				new RowConstraints(),
 				new RowConstraints()
 		};
+		
+		dataPane.getRowConstraints().addAll(rows);
+		
+		rows[0].setValignment(VPos.CENTER);
+		rows[1].setValignment(VPos.CENTER);
 		
 		ColumnConstraints[] cols = {
 				new ColumnConstraints(),
@@ -49,7 +57,7 @@ public class View extends VBox {
 		dataPane.getColumnConstraints().addAll(cols);
 		
 		cols[0].setHalignment(HPos.LEFT);
-		cols[0].setMinWidth(50);
+		cols[0].setMinWidth(10);
 		
 		cols[1].setMaxWidth(75);
 		
@@ -60,9 +68,11 @@ public class View extends VBox {
 		cancelarButton = new Button("Cancelar");
 		
 		buttonsBox = new HBox(accederButton, cancelarButton);
+		buttonsBox.setAlignment(Pos.CENTER);
 		buttonsBox.setSpacing(5);
 		
 		getChildren().addAll(dataPane, useLdapCheckBox, buttonsBox);
+		setAlignment(Pos.CENTER);
 		setSpacing(5);
 	}
 
